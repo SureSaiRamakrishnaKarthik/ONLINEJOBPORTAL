@@ -6,9 +6,18 @@ import cloudinary from "../utils/cloud.js";
 
 export const register = async (req, res) => {
   try {
-    const { fullname, email, phoneNumber, password, adharcard, pancard, role } = req.body;
+    const { fullname, email, phoneNumber, password, adharcard, pancard, role } =
+      req.body;
 
-    if (!fullname || !email || !phoneNumber || !password || !role || !pancard || !adharcard) {
+    if (
+      !fullname ||
+      !email ||
+      !phoneNumber ||
+      !password ||
+      !role ||
+      !pancard ||
+      !adharcard
+    ) {
       return res.status(400).json({
         message: "Missing required fields",
         success: false,
@@ -136,7 +145,8 @@ export const login = async (req, res) => {
       .cookie("token", token, {
         maxAge: 24 * 60 * 60 * 1000,
         httpOnly: true,
-        sameSite: "Strict",
+        sameSite: "none",
+        secure: true,
       })
       .json({
         message: `Welcome back ${user.fullname}`,
@@ -219,88 +229,6 @@ export const updateProfile = async (req, res) => {
     });
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { User } from "../models/user.model.js";
 // import bcrypt from "bcryptjs";
