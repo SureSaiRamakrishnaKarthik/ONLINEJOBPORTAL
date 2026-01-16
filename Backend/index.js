@@ -30,6 +30,9 @@ app.use(cors(corsOptions));
 const PORT = process.env.PORT || 5001;
 
 //api's
+app.get("/", (req, res) => {
+  res.json({ message: "Online Job Portal Backend API is running!" });
+});
 
 app.use("/api/user", userRoute);
 app.use("/api/company", companyRoute);
