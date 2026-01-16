@@ -5,6 +5,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) job portal application wher
 ## Features
 
 ### For Students
+
 - User registration and authentication
 - Browse available job listings
 - Apply for jobs with profile
@@ -12,6 +13,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) job portal application wher
 - Profile management with image upload
 
 ### For Recruiters
+
 - Company registration and management
 - Post job openings
 - View and manage applications
@@ -20,6 +22,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) job portal application wher
 ## Tech Stack
 
 **Frontend:**
+
 - React.js with Vite
 - Redux Toolkit for state management
 - Tailwind CSS for styling
@@ -27,6 +30,7 @@ A full-stack MERN (MongoDB, Express, React, Node.js) job portal application wher
 - React Router for navigation
 
 **Backend:**
+
 - Node.js with Express
 - MongoDB with Mongoose
 - JWT for authentication
@@ -42,12 +46,14 @@ A full-stack MERN (MongoDB, Express, React, Node.js) job portal application wher
 ## Installation
 
 ### 1. Clone the repository
+
 ```bash
 git clone <your-repo-url>
 cd Online-Job-Portal-main
 ```
 
 ### 2. Backend Setup
+
 ```bash
 cd Backend
 npm install
@@ -57,6 +63,7 @@ cp .env.example .env
 ```
 
 Edit `.env` file with your credentials:
+
 ```env
 PORT=3000
 MONGO_URI=your_mongodb_connection_string
@@ -67,6 +74,7 @@ API_SECRET=your_cloudinary_api_secret
 ```
 
 ### 3. Frontend Setup
+
 ```bash
 cd ../Frontend
 npm install
@@ -77,17 +85,21 @@ Update `src/utils/data.js` to match your backend port if needed.
 ## Running Locally
 
 ### Start Backend Server
+
 ```bash
 cd Backend
 npm run dev
 ```
+
 Backend will run on `http://localhost:3000`
 
 ### Start Frontend Development Server
+
 ```bash
 cd Frontend
 npm run dev
 ```
+
 Frontend will run on `http://localhost:5173`
 
 ## Deployment
@@ -97,12 +109,14 @@ Frontend will run on `http://localhost:5173`
 1. **Create account** on [Render](https://render.com) or [Railway](https://railway.app)
 
 2. **Create a new Web Service**
+
    - Connect your GitHub repository
    - Set root directory: `Backend`
    - Build command: `npm install`
    - Start command: `npm run dev` or `node index.js`
 
 3. **Add Environment Variables:**
+
    - `MONGO_URI`
    - `JWT_SECRET`
    - `CLOUD_NAME`
@@ -117,14 +131,17 @@ Frontend will run on `http://localhost:5173`
 1. **Create account** on [Vercel](https://vercel.com) or [Netlify](https://netlify.com)
 
 2. **Before deploying**, update `Frontend/src/utils/data.js` with your deployed backend URL:
+
 ```javascript
 export const USER_API_ENDPOINT = "https://your-backend-url.com/api/user";
 export const JOB_API_ENDPOINT = "https://your-backend-url.com/api/job";
-export const APPLICATION_API_ENDPOINT = "https://your-backend-url.com/api/application";
+export const APPLICATION_API_ENDPOINT =
+  "https://your-backend-url.com/api/application";
 export const COMPANY_API_ENDPOINT = "https://your-backend-url.com/api/company";
 ```
 
 3. **Deploy via Vercel:**
+
    - Import your GitHub repository
    - Set root directory: `Frontend`
    - Build command: `npm run build`
@@ -132,6 +149,7 @@ export const COMPANY_API_ENDPOINT = "https://your-backend-url.com/api/company";
    - Deploy
 
 4. **Update CORS** in `Backend/index.js`:
+
 ```javascript
 const corsOptions = {
   origin: ["https://your-frontend-url.vercel.app"],
@@ -142,6 +160,7 @@ const corsOptions = {
 ## Environment Variables
 
 ### Backend (.env)
+
 ```
 PORT=3000
 MONGO_URI=mongodb+srv://...
@@ -152,6 +171,7 @@ API_SECRET=your_cloudinary_secret
 ```
 
 ### Frontend
+
 Update API endpoints in `src/utils/data.js` to point to your deployed backend.
 
 ## Project Structure
@@ -179,24 +199,28 @@ Online-Job-Portal-main/
 ## API Endpoints
 
 ### User Routes
+
 - `POST /api/user/register` - Register new user
 - `POST /api/user/login` - User login
 - `GET /api/user/profile` - Get user profile
 - `PUT /api/user/profile/update` - Update profile
 
 ### Job Routes
+
 - `GET /api/job` - Get all jobs
 - `GET /api/job/:id` - Get job by ID
 - `POST /api/job/post` - Post new job (Recruiter)
 - `GET /api/job/admin/jobs` - Get recruiter's jobs
 
 ### Company Routes
+
 - `POST /api/company/register` - Register company
 - `GET /api/company` - Get all companies
 - `GET /api/company/:id` - Get company by ID
 - `PUT /api/company/:id` - Update company
 
 ### Application Routes
+
 - `POST /api/application/apply/:id` - Apply for job
 - `GET /api/application` - Get user applications
 - `GET /api/application/:id/applicants` - Get job applicants
