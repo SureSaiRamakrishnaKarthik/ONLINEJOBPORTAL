@@ -19,6 +19,7 @@ app.use(cookieParser());
 const corsOptions = {
   origin: [
     "http://localhost:5173",
+    "https://onlinejobportal-frontend.onrender.com",
     "https://onlinejobportal-1.onrender.com",
     "https://onlinejobportal-red.vercel.app",
     "https://onlinejobportal.vercel.app",
