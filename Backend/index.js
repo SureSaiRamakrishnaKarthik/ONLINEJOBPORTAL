@@ -25,7 +25,7 @@ const corsOptions = {
     "https://onlinejobportal.vercel.app",
     "https://onlinejobportal-git-main.vercel.app",
   ],
-  credentials: true,
+  credentials: false,
 };
 
 app.use(cors(corsOptions));
