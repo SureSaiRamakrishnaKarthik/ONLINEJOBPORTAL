@@ -15,7 +15,7 @@ const useGetAllAdminJobs = () => {
       setError(null);
       try {
         const res = await axios.get(`${JOB_API_ENDPOINT}/getadminjobs`, {
-          withCredentials: true,
+          
         });
         console.log("API Response:", res.data);
         if (res.data.status) {

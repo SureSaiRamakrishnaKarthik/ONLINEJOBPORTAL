@@ -10,7 +10,7 @@ const useGetAppliedJobs = () => {
     const fetchAppliedJobs = async () => {
       try {
         const res = await axios.get(`${APPLICATION_API_ENDPOINT}/get`, {
-          withCredentials: true,
+          
         });
         console.log("API Response:", res.data);
         if (res.data.success) {

@@ -12,7 +12,7 @@ const useGetCompanyById = (companyId) => {
       try {
         const res = await axios.get(
           `${COMPANY_API_ENDPOINT}/get/${companyId}`,
-          { withCredentials: true }
+          {  }
         );
         dispatch(setSingleCompany(res.data.company));
       } catch (error) {

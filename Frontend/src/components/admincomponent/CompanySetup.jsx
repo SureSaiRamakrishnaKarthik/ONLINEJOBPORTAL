@@ -54,7 +54,7 @@ const CompanySetup = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-          withCredentials: true,
+          
         }
       );
       console.log(res); // Debugging API response

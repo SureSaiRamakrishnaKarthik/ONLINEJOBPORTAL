@@ -55,7 +55,7 @@ const EditProfileModal = ({ open, setOpen }) => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-          withCredentials: true,
+          
         }
       );
       if (res.data.success) {

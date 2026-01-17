@@ -18,7 +18,7 @@ const useGetAllJobs = () => {
         const res = await axios.get(
           `${JOB_API_ENDPOINT}/get?keyword=${searchedQuery}`,
           {
-            withCredentials: true,
+            
           }
         );
         console.log("API Response:", res.data);

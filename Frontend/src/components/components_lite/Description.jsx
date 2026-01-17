@@ -28,7 +28,7 @@ const Description = () => {
     try {
       const res = await axios.get(
         `${APPLICATION_API_ENDPOINT}/apply/${jobId}`,
-        { withCredentials: true }
+        {  }
       );
       if (res.data.success) {
         setIsApplied(true);
@@ -52,7 +52,7 @@ const Description = () => {
       setError(null);
       try {
         const res = await axios.get(`${JOB_API_ENDPOINT}/get/${jobId}`, {
-          withCredentials: true,
+          
         });
         console.log("API Response:", res.data);
         if (res.data.status) {
