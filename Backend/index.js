@@ -8,7 +8,7 @@ import companyRoute from "./routes/company.route.js";
 import jobRoute from "./routes/job.route.js";
 import applicationRoute from "./routes/application.route.js";
 
-dotenv.config({});
+dotenv.config();
 const app = express();
 
 //middleware
@@ -25,7 +25,6 @@ app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 5001;
 
- 
 //api's
 
 app.use("/api/user", userRoute);
